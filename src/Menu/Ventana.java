@@ -21,24 +21,24 @@ public class Ventana extends JFrame {
 
 		if (incluirBoton) {
 	      // Crear un botón solo si se solicita, ya que sino trae los botones del menu inicial
-		JButton button = new JButton();
-		button.setText("Ejercicio 1");
-		button.setBounds(180, 80, 140, 30);
-		
-		JButton button1 = new JButton();
-		button1.setText("Ejercicio 2");
-		button1.setBounds(180, 130, 140, 30);
-		
-		//Evento boton
-		EventoBoton eventoA = new EventoBoton("CONTACTOS");		
-		button.addActionListener(eventoA);
-		
-		
-		
-		
-		this.setLayout(null);
-		this.getContentPane().add(button);
-    }	
+			JButton button = new JButton();
+			button.setText("Ejercicio 1");
+			button.setBounds(180, 80, 140, 30);
+			
+			JButton button1 = new JButton();
+			button1.setText("Ejercicio 2");
+			button1.setBounds(180, 130, 140, 30);
+			
+			//Evento boton
+			EventoBoton eventoA = new EventoBoton("CONTACTOS");		
+			button.addActionListener(eventoA);
+			
+			
+			
+			
+			this.setLayout(null);
+			this.getContentPane().add(button);
+		}	
 		this.setVisible(true);
     
 	
