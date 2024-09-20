@@ -29,15 +29,20 @@ public class Ventana extends JFrame {
 			button1.setText("Ejercicio 2");
 			button1.setBounds(180, 130, 140, 30);
 			
-			//Evento boton
-			EventoBoton eventoA = new EventoBoton("CONTACTOS");		
+			//Evento boton 0
+			EventoBoton eventoA = new EventoBoton("CONTACTOS", 0);		
 			button.addActionListener(eventoA);
+			
+			//Evento boton 1
+			EventoBoton eventoB = new EventoBoton("PROMEDIO", 1);		
+			button1.addActionListener(eventoB);
 			
 			
 			
 			
 			this.setLayout(null);
 			this.getContentPane().add(button);
+			this.getContentPane().add(button1);
 		}	
 		this.setVisible(true);
     
