@@ -29,6 +29,10 @@ public class Ventana extends JFrame {
 			button1.setText("Ejercicio 2");
 			button1.setBounds(180, 130, 140, 30);
 			
+			JButton button2 = new JButton();
+			button2.setText("Ejercicio 3");
+			button2.setBounds(180, 180, 140, 30);
+			
 			//Evento boton 0
 			EventoBoton eventoA = new EventoBoton("CONTACTOS", 0);		
 			button.addActionListener(eventoA);
@@ -37,12 +41,17 @@ public class Ventana extends JFrame {
 			EventoBoton eventoB = new EventoBoton("PROMEDIO", 1);		
 			button1.addActionListener(eventoB);
 			
+			//Evento boton 2
+			EventoBoton eventoC = new EventoBoton("Seleccion multiple", 2);		
+			button2.addActionListener(eventoC);
+			
 			
 			
 			
 			this.setLayout(null);
 			this.getContentPane().add(button);
 			this.getContentPane().add(button1);
+			this.getContentPane().add(button2);
 		}	
 		this.setVisible(true);
     
