@@ -3,6 +3,10 @@ package Menu;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 
 public class Ejercicio_1 extends Ventana{
@@ -64,5 +68,23 @@ public class Ejercicio_1 extends Ventana{
         lblResultado.setBounds(21, 268, 160, 26);
         getContentPane().add(lblResultado);
         
+        
+        
 	}
+	 private void validarCampos() {
+
+	        if (txtNombre.getText().isEmpty()) {
+	            txtNombre.setBackground(Color.RED);
+	        } else {
+	            txtNombre.setBackground(Color.WHITE);
+	        }
+
+	        if (txtApellido.getText().isEmpty()) {
+	            txtApellido.setBackground(Color.RED);
+	        } else {
+	            txtApellido.setBackground(Color.WHITE);
+	        }
+
+	        
+	    }
 }
