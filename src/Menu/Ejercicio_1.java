@@ -99,4 +99,16 @@ public class Ejercicio_1 extends Ventana{
 	        }
 	        
 	    }
+private void limpiarCampos() {
+		  if (!txtNombre.getText().isEmpty() && 
+		      !txtApellido.getText().isEmpty() && 
+		      !txtTelefono.getText().isEmpty() && 
+		      !txtFechaNac.getText().isEmpty()) {
+			  	txtNombre.setText("");
+		        txtApellido.setText("");
+		        txtTelefono.setText("");
+		        txtFechaNac.setText("");
+		        }
+		}
+
 }
