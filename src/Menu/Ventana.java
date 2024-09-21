@@ -2,8 +2,9 @@ package Menu;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-
+import javax.swing.JLabel;
 import Menu.EventoBoton;
+import java.awt.Font;
 
 
 public class Ventana extends JFrame {
@@ -18,8 +19,15 @@ public class Ventana extends JFrame {
 		this.setTitle("TP4_GRUPO_15");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
+		
+        
 
 		if (incluirBoton) {
+			JLabel label = new JLabel("GRUPO NRO: 15");
+	        label.setBounds(80, 30, 140, 30);
+	        label.setFont(new Font("Arial", Font.BOLD, 16));
+	        
+	        this.getContentPane().add(label);
 	      // Crear un botón solo si se solicita, ya que sino trae los botones del menu inicial
 			JButton button = new JButton();
 			button.setText("Ejercicio 1");
