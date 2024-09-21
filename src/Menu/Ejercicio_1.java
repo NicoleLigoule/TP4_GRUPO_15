@@ -71,6 +71,7 @@ public class Ejercicio_1 extends Ventana{
         
         
 	}
+	
 	 private void validarCampos() {
 
 	        if (txtNombre.getText().isEmpty()) {
@@ -84,7 +85,18 @@ public class Ejercicio_1 extends Ventana{
 	        } else {
 	            txtApellido.setBackground(Color.WHITE);
 	        }
+	        
+	        if (txtTelefono.getText().isEmpty()) {
+	            txtTelefono.setBackground(Color.RED);
+	        } else {
+	            txtTelefono.setBackground(Color.WHITE);
+	        }
 
+	        if (txtFechaNac.getText().isEmpty()) {
+	            txtFechaNac.setBackground(Color.RED);
+	        } else {
+	            txtFechaNac.setBackground(Color.WHITE);
+	        }
 	        
 	    }
 }
