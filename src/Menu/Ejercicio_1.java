@@ -64,10 +64,22 @@ public class Ejercicio_1 extends Ventana{
         btnMostar.setBounds(110, 204, 141, 35);
         getContentPane().add(btnMostar);
         
-        JLabel lblResultado = new JLabel("lorem ipsum...");
-        lblResultado.setBounds(21, 268, 160, 26);
+        JLabel lblResultado = new JLabel("Los datos ingresados fueron:");
+        lblResultado.setBounds(21, 268, 350, 26);  
         getContentPane().add(lblResultado);
         
+        
+        btnMostar.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+
+                String nombre = txtNombre.getText();
+                String apellido = txtApellido.getText();
+                String telefono = txtTelefono.getText();
+                String fechaNac = txtFechaNac.getText();
+                
+            }
+        });
         
         
 	}
