@@ -64,9 +64,8 @@ public class Ejercicio_1 extends Ventana{
         btnMostar.setBounds(110, 204, 141, 35);
         getContentPane().add(btnMostar);
         
-        JLabel lblResultado = new JLabel("Los datos ingresados fueron:");
-        lblResultado.setBounds(21, 268, 350, 26);  
-        getContentPane().add(lblResultado);
+        
+        
         
         
         btnMostar.addActionListener(new ActionListener() {
@@ -77,9 +76,11 @@ public class Ejercicio_1 extends Ventana{
                 String apellido = txtApellido.getText();
                 String telefono = txtTelefono.getText();
                 String fechaNac = txtFechaNac.getText();
-                
-                lblResultado.setText("Los datos ingresados fueron: " + nombre + apellido 
-                        + telefono + fechaNac);
+                JLabel lblResultado = new JLabel();
+                lblResultado.setText("Los datos ingresados fueron: " + nombre +", "+ apellido 
+                        +", "+ telefono +", "+ fechaNac);
+                lblResultado.setBounds(21, 268, 500, 50);  
+                getContentPane().add(lblResultado);
                 
             }
         });
