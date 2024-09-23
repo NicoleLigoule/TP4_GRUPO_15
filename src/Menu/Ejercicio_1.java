@@ -65,56 +65,68 @@ public class Ejercicio_1 extends Ventana{
         getContentPane().add(btnMostar);
         
         
-        
+        JLabel lblResultado = new JLabel();
+        lblResultado.setBounds(21, 268, 500, 50); 
+        getContentPane().add(lblResultado);
+
         
         
         btnMostar.addActionListener(new ActionListener() {
-
             public void actionPerformed(ActionEvent e) {
-
-                String nombre = txtNombre.getText();
-                String apellido = txtApellido.getText();
-                String telefono = txtTelefono.getText();
-                String fechaNac = txtFechaNac.getText();
-                JLabel lblResultado = new JLabel();
-                lblResultado.setText("Los datos ingresados fueron: " + nombre +", "+ apellido 
-                        +", "+ telefono +", "+ fechaNac);
-                lblResultado.setBounds(21, 268, 500, 50);  
-                getContentPane().add(lblResultado);
-                
+                if (validarCampos()) {
+                    String nombre = txtNombre.getText();
+                    String apellido = txtApellido.getText();
+                    String telefono = txtTelefono.getText();
+                    String fechaNac = txtFechaNac.getText();
+                    lblResultado.setText("Los datos ingresados fueron: " + nombre + ", " + apellido + ", " + telefono + ", " + fechaNac);
+                    limpiarCampos();  
+                } else {
+                    lblResultado.setText("");  
+                }
             }
         });
         
-        
 	}
 	
-	 private void validarCampos() {
+	private boolean validarCampos() {
+        boolean todosValidos = true;
 
-	        if (txtNombre.getText().isEmpty()) {
-	            txtNombre.setBackground(Color.RED);
-	        } else {
-	            txtNombre.setBackground(Color.WHITE);
-	        }
 
-	        if (txtApellido.getText().isEmpty()) {
-	            txtApellido.setBackground(Color.RED);
-	        } else {
-	            txtApellido.setBackground(Color.WHITE);
-	        }
-	        
-	        if (txtTelefono.getText().isEmpty()) {
-	            txtTelefono.setBackground(Color.RED);
-	        } else {
-	            txtTelefono.setBackground(Color.WHITE);
-	        }
+        if (txtNombre.getText().isEmpty() || !txtNombre.getText().matches("[a-zA-Z]+")) {
+            txtNombre.setBackground(Color.RED);
+            todosValidos = false;
+        } else {
+            txtNombre.setBackground(Color.WHITE);
+        }
 
-	        if (txtFechaNac.getText().isEmpty()) {
-	            txtFechaNac.setBackground(Color.RED);
-	        } else {
-	            txtFechaNac.setBackground(Color.WHITE);
-	        }
-	        
-	    }
+
+        if (txtApellido.getText().isEmpty() || !txtApellido.getText().matches("[a-zA-Z]+")) {
+            txtApellido.setBackground(Color.RED);
+            todosValidos = false;
+        } else {
+            txtApellido.setBackground(Color.WHITE);
+        }
+
+
+        if (txtTelefono.getText().isEmpty() || !txtTelefono.getText().matches("\\d+")) {
+            txtTelefono.setBackground(Color.RED);
+            todosValidos = false;
+        } else {
+            txtTelefono.setBackground(Color.WHITE);
+        }
+
+
+        if (txtFechaNac.getText().isEmpty()) {
+            txtFechaNac.setBackground(Color.RED);
+            todosValidos = false;
+        } else {
+            txtFechaNac.setBackground(Color.WHITE);
+        }
+
+       // limpiarCamposParcial(todosValidos);
+
+        return todosValidos;
+    }
 private void limpiarCampos() {
 		  if (!txtNombre.getText().isEmpty() && 
 		      !txtApellido.getText().isEmpty() && 
