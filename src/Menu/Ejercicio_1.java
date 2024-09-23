@@ -78,6 +78,9 @@ public class Ejercicio_1 extends Ventana{
                 String telefono = txtTelefono.getText();
                 String fechaNac = txtFechaNac.getText();
                 
+                lblResultado.setText("Los datos ingresados fueron: " + nombre + apellido 
+                        + telefono + fechaNac);
+                
             }
         });
         
