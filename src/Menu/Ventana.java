@@ -9,11 +9,13 @@ import java.awt.Font;
 
 public class Ventana extends JFrame {
     
+		
     public Ventana(boolean incluirBoton) {
      
     	//JFrame frame = new JFrame();
     	// Aquí no necesitamos crear un nuevo JFrame, ya que Ventana hereda de JFrame
-		
+    	
+    
 		this.setSize(500,500);
 		this.setLocation(350,350);
 		this.setTitle("TP4_GRUPO_15");
@@ -61,8 +63,7 @@ public class Ventana extends JFrame {
 			this.getContentPane().add(button1);
 			this.getContentPane().add(button2);
 		}	
-		this.setVisible(true);
-    
+		this.setVisible(true);    
 	
     }
 }

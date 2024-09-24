@@ -27,8 +27,8 @@ public class EventoBoton implements ActionListener{
 		}
 		if(numeroDeBoton == 1) 
 		{
-			Ejercicio_1 ventEj1 = new Ejercicio_1();
-		    ventEj1.setTitle(title);
+			Ejercicio_2 ventEj2 = new Ejercicio_2();
+		    ventEj2.setTitle(title);
 		}
 	    
 	   
