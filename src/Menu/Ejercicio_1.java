@@ -116,7 +116,7 @@ public class Ejercicio_1 extends Ventana{
         }
 
 
-        if (txtFechaNac.getText().isEmpty()) {
+        if (txtFechaNac.getText().isEmpty() || !txtFechaNac.getText().matches("\\d{1,2}/\\d{1,2}/\\d{4}")) {
             txtFechaNac.setBackground(Color.RED);
             todosValidos = false;
         } else {
