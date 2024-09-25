@@ -66,15 +66,15 @@ public class Ejercicio_2 extends Ventana{
 
 
         JButton btnCalcular = new JButton("CALCULAR");
-        btnCalcular.setBounds(300, 40, 90, 30);
+        btnCalcular.setBounds(300, 40, 130, 30);
         getContentPane().add(btnCalcular);
 
         JButton btnNuevo = new JButton("NUEVO");
-        btnNuevo.setBounds(300, 80, 90, 30);
+        btnNuevo.setBounds(300, 80, 130, 30);
         getContentPane().add(btnNuevo);
 
         JButton btnSalir = new JButton("SALIR");
-        btnSalir.setBounds(300, 120, 90, 30);
+        btnSalir.setBounds(300, 120, 130, 30);
         getContentPane().add(btnSalir);
 
 
