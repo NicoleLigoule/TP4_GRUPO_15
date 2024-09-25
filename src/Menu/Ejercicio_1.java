@@ -10,18 +10,21 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 public class Ejercicio_1 extends Ventana{
+	private static boolean VentanaAbierta = false;
+	
 	private JTextField txtNombre;
 	private JTextField txtApellido;
 	private JTextField txtTelefono;
 	private JTextField txtFechaNac;
 
-	public Ejercicio_1() {
+	public Ejercicio_1(String nombre) {
 		super(false);
 		
         
         this.setSize(400, 400);
         this.setLocation(200, 100);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setTitle(nombre);
         getContentPane().setLayout(null);
         
         JLabel lblNombre = new JLabel("Nombre:");
@@ -67,9 +70,7 @@ public class Ejercicio_1 extends Ventana{
         
         JLabel lblResultado = new JLabel();
         lblResultado.setBounds(21, 268, 500, 50); 
-        getContentPane().add(lblResultado);
-
-        
+        getContentPane().add(lblResultado);       
         
         btnMostar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -83,6 +84,13 @@ public class Ejercicio_1 extends Ventana{
                 } else {
                     lblResultado.setText("");  
                 }
+            }
+        });
+        
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent e) {
+                VentanaAbierta = false;
             }
         });
         
@@ -127,16 +135,24 @@ public class Ejercicio_1 extends Ventana{
 
         return todosValidos;
     }
-private void limpiarCampos() {
+	private void limpiarCampos() {
 		  if (!txtNombre.getText().isEmpty() && 
 		      !txtApellido.getText().isEmpty() && 
 		      !txtTelefono.getText().isEmpty() && 
-		      !txtFechaNac.getText().isEmpty()) {
+		      !txtFechaNac.getText().isEmpty()) 
+	  		{
 			  	txtNombre.setText("");
 		        txtApellido.setText("");
 		        txtTelefono.setText("");
 		        txtFechaNac.setText("");
-		        }
-		}
-
+        	}
+	}
+	
+    public static void mostrarVentana(String nombre) {
+        if (!VentanaAbierta) {
+            new Ejercicio_1(nombre).setVisible(true);
+            
+            VentanaAbierta = true;
+        }
+    }
 }
