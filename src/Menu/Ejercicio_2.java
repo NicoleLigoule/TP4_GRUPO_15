@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -147,7 +149,17 @@ public class Ejercicio_2 extends Ventana {
         getContentPane().add(btnSalir);
 
         this.setVisible(true);
-    }
+    
+    
+    
+    btnSalir.addActionListener(new ActionListener() {
+    	public void actionPerformed(ActionEvent e) {
+            // Cerrar la ventana actual
+            dispose();
+        }
+    });
+}
+
 
     public static void main(String[] args) {
         new Ejercicio_2();
