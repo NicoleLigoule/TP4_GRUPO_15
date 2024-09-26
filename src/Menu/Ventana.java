@@ -16,7 +16,7 @@ public class Ventana extends JFrame {
     	// Aquí no necesitamos crear un nuevo JFrame, ya que Ventana hereda de JFrame
     	
     
-		this.setSize(500,500);
+		this.setSize(500,300);
 		this.setLocation(350,350);
 		this.setTitle("TP4_GRUPO_15");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

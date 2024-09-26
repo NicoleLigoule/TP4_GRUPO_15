@@ -23,7 +23,7 @@ public class Ejercicio_2 extends Ventana {
     public Ejercicio_2() {
         super(false);
 
-        this.setSize(400, 400);
+        this.setSize(500, 500);
         this.setLocation(500, 100);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -140,9 +140,12 @@ public class Ejercicio_2 extends Ventana {
         btnCalcular.setBounds(320, 130, 130, 30);
         getContentPane().add(btnCalcular);
         
+                
         
         btnCalcular.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	
+            	if (validarCampos()) {
                 try {
                    
                     double nota1 = Double.parseDouble(txtNota1.getText());
@@ -156,7 +159,7 @@ public class Ejercicio_2 extends Ventana {
                     txtPromedio.setText(String.format("%.2f", promedio));
 
                     
-                    String condicion;
+                    String condicion = "Promocion"; // Eclipse sugirio inicializar variable ya que lanzaba error en  linea 181
 
                     if (estadoTP.equals("Desaprobado")) {
                         condicion = "Libre";
@@ -166,8 +169,14 @@ public class Ejercicio_2 extends Ventana {
                         condicion = "Libre";
                     }
                     
+                    else if (nota1 >= 8 && nota2 >= 8 && nota3 >= 8 && estadoTP.equals("Aprobado")) {
+						condicion = "promocionado";
+					}
                     
-
+                    else if (nota1 >= 6 && nota1 < 8 || nota2 >= 6 && nota2 < 8  || nota3 >= 6 && nota3 < 8  && estadoTP.equals("Aprobado")) {
+						condicion = "regular";
+					}
+                                       
                     
                     txtCondicion.setText(condicion);
 
@@ -176,6 +185,7 @@ public class Ejercicio_2 extends Ventana {
                     txtPromedio.setText("Error");
                     txtCondicion.setText("Error");
                 }
+              }
             }
         });
 
@@ -198,8 +208,50 @@ public class Ejercicio_2 extends Ventana {
     });
 }
 
+    //metodo para validar notas del 1 al 10, incluyendo decimales
+    private boolean validarCampos() {
+        boolean todosValidos = true;
+        
+        // Validación para la nota 1
+        String nota1 = txtNota1.getText().trim();
+        try {
+            double valorNota1 = Double.parseDouble(nota1);
+            if (valorNota1 < 1 || valorNota1 > 10) {
+                throw new NumberFormatException();
+            }
+            txtNota1.setBackground(Color.WHITE);
+        } catch (NumberFormatException | NullPointerException e) {
+            txtNota1.setBackground(Color.RED);
+            todosValidos = false;
+        }
 
-    public static void main(String[] args) {
-        new Ejercicio_2();
+        // Validación para la nota 2
+        String nota2 = txtNota2.getText().trim();
+        try {
+            double valorNota2 = Double.parseDouble(nota2);
+            if (valorNota2 < 1 || valorNota2 > 10) {
+                throw new NumberFormatException();
+            }
+            txtNota2.setBackground(Color.WHITE);
+        } catch (NumberFormatException | NullPointerException e) {
+            txtNota2.setBackground(Color.RED);
+            todosValidos = false;
+        }
+
+        // Validación para la nota 3
+        String nota3 = txtNota3.getText().trim();
+        try {
+            double valorNota3 = Double.parseDouble(nota3);
+            if (valorNota3 < 1 || valorNota3 > 10) {
+                throw new NumberFormatException();
+            }
+            txtNota3.setBackground(Color.WHITE);
+        } catch (NumberFormatException | NullPointerException e) {
+            txtNota3.setBackground(Color.RED);
+            todosValidos = false;
+        }     
+
+        return todosValidos;
     }
+        
 }
