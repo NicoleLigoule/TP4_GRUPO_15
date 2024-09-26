@@ -139,6 +139,23 @@ public class Ejercicio_2 extends Ventana {
         JButton btnCalcular = new JButton("CALCULAR");
         btnCalcular.setBounds(320, 130, 130, 30);
         getContentPane().add(btnCalcular);
+        
+        
+        btnCalcular.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    double nota1 = Double.parseDouble(txtNota1.getText());
+                    double nota2 = Double.parseDouble(txtNota2.getText());
+                    double nota3 = Double.parseDouble(txtNota3.getText());
+
+                    double promedio = (nota1 + nota2 + nota3) / 3;
+                    txtPromedio.setText(String.format("%.2f", promedio));
+
+ 
+                    
+                }
+            }
+        });
 
         JButton btnNuevo = new JButton("NUEVO");
         btnNuevo.setBounds(320, 170, 130, 30);
@@ -154,7 +171,6 @@ public class Ejercicio_2 extends Ventana {
     
     btnSalir.addActionListener(new ActionListener() {
     	public void actionPerformed(ActionEvent e) {
-            // Cerrar la ventana actual
             dispose();
         }
     });
