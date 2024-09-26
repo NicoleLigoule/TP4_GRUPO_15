@@ -74,8 +74,7 @@ public class Ejercicio_2 extends Ventana{
         gbc.gridy = 0;
         panelResultados.add(new JLabel("Promedio:"), gbc);
         gbc.gridx = 1;
-        txtPromedio = new JTextField(10);
-        //txtPromedio.setEditable(false); 
+        txtPromedio = new JTextField(10); 
         panelResultados.add(txtPromedio, gbc);
 
 
@@ -83,8 +82,7 @@ public class Ejercicio_2 extends Ventana{
         gbc.gridy = 1;
         panelResultados.add(new JLabel("Condición:"), gbc);
         gbc.gridx = 1;
-        txtCondicion = new JTextField(10);
-        //txtCondicion.setEditable(false); 
+        txtCondicion = new JTextField(10); 
         panelResultados.add(txtCondicion, gbc);
 
         JButton btnCalcular = new JButton("CALCULAR");
