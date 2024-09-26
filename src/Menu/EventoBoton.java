@@ -31,6 +31,11 @@ public class EventoBoton implements ActionListener{
 			Ejercicio_2 ventEj2 = new Ejercicio_2();
 		    ventEj2.setTitle(title);
 		}
+		if(numeroDeBoton == 2) 
+		{
+			Ejercicio_3 ventEj3 = new Ejercicio_3();
+		    ventEj3.setTitle(title);
+		}
 	    
 	   
 		
