@@ -192,6 +192,26 @@ public class Ejercicio_2 extends Ventana {
         JButton btnNuevo = new JButton("NUEVO");
         btnNuevo.setBounds(320, 170, 130, 30);
         getContentPane().add(btnNuevo);
+        
+        btnNuevo.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Limpiar los campos de texto
+                txtNota1.setText("");
+                txtNota2.setText("");
+                txtNota3.setText("");
+                txtPromedio.setText("");
+                txtCondicion.setText("");
+
+                // Restablecer el color de los campos de texto
+                txtNota1.setBackground(Color.WHITE);
+                txtNota2.setBackground(Color.WHITE);
+                txtNota3.setBackground(Color.WHITE);
+
+                // Restablecer la selección del JComboBox
+                comboBox.setSelectedIndex(0);
+            }
+        });
+        
 
         JButton btnSalir = new JButton("SALIR");
         btnSalir.setBounds(320, 210, 130, 30);
