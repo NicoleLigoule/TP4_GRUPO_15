@@ -144,15 +144,37 @@ public class Ejercicio_2 extends Ventana {
         btnCalcular.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
+                   
                     double nota1 = Double.parseDouble(txtNota1.getText());
                     double nota2 = Double.parseDouble(txtNota2.getText());
                     double nota3 = Double.parseDouble(txtNota3.getText());
 
+                    
+                    String estadoTP = (String) comboBox.getSelectedItem(); 
+                    
                     double promedio = (nota1 + nota2 + nota3) / 3;
                     txtPromedio.setText(String.format("%.2f", promedio));
 
- 
                     
+                    String condicion;
+
+                    if (estadoTP.equals("Desaprobado")) {
+                        condicion = "Libre";
+                    }
+                    
+                    else if (nota1 < 6 || nota2 < 6 || nota3 < 6) {
+                        condicion = "Libre";
+                    }
+                    
+                    
+
+                    
+                    txtCondicion.setText(condicion);
+
+                } catch (NumberFormatException ex) {
+                    
+                    txtPromedio.setText("Error");
+                    txtCondicion.setText("Error");
                 }
             }
         });
