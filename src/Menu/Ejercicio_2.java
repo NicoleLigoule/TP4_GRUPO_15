@@ -159,8 +159,7 @@ public class Ejercicio_2 extends Ventana {
                     txtPromedio.setText(String.format("%.2f", promedio));
 
                     
-                    String condicion = "Promocion"; // Eclipse sugirio inicializar variable ya que lanzaba error en  linea 181
-
+                    String condicion = "Promocion"; 
                     if (estadoTP.equals("Desaprobado")) {
                         condicion = "Libre";
                     }
@@ -195,19 +194,19 @@ public class Ejercicio_2 extends Ventana {
         
         btnNuevo.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Limpiar los campos de texto
+
                 txtNota1.setText("");
                 txtNota2.setText("");
                 txtNota3.setText("");
                 txtPromedio.setText("");
                 txtCondicion.setText("");
 
-                // Restablecer el color de los campos de texto
+
                 txtNota1.setBackground(Color.WHITE);
                 txtNota2.setBackground(Color.WHITE);
                 txtNota3.setBackground(Color.WHITE);
 
-                // Restablecer la selección del JComboBox
+ 
                 comboBox.setSelectedIndex(0);
             }
         });
@@ -228,11 +227,11 @@ public class Ejercicio_2 extends Ventana {
     });
 }
 
-    //metodo para validar notas del 1 al 10, incluyendo decimales
+
     private boolean validarCampos() {
         boolean todosValidos = true;
         
-        // Validación para la nota 1
+
         String nota1 = txtNota1.getText().trim();
         try {
             double valorNota1 = Double.parseDouble(nota1);
@@ -245,7 +244,6 @@ public class Ejercicio_2 extends Ventana {
             todosValidos = false;
         }
 
-        // Validación para la nota 2
         String nota2 = txtNota2.getText().trim();
         try {
             double valorNota2 = Double.parseDouble(nota2);
@@ -258,7 +256,7 @@ public class Ejercicio_2 extends Ventana {
             todosValidos = false;
         }
 
-        // Validación para la nota 3
+
         String nota3 = txtNota3.getText().trim();
         try {
             double valorNota3 = Double.parseDouble(nota3);
