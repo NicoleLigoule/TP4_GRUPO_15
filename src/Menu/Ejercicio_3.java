@@ -2,6 +2,8 @@ package Menu;
 
 import java.awt.Color;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -81,7 +83,15 @@ public class Ejercicio_3 extends Ventana{
         btnAceptar.setBounds(302, 255, 115, 29);
         getContentPane().add(btnAceptar);
         
+        btnAceptar.addActionListener(new ActionListener() {
+           public void actionPerformed(ActionEvent e) {              
 
+      			EventoBoton resultado = new EventoBoton("Mensaje", 3);		
+      			btnAceptar.addActionListener(resultado);
+                    
+                
+            }
+        });
         
         
 	}
