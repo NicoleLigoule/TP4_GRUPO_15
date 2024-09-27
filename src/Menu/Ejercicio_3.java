@@ -93,6 +93,8 @@ public class Ejercicio_3 extends Ventana{
         
         btnAceptar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+      			EventoBoton resultado = new EventoBoton("Mensaje", 3);		
+      			btnAceptar.addActionListener(resultado);
 
                 String sistemaOperativo = "";
                 if (rdbtnNewRadioButton.isSelected()) {
