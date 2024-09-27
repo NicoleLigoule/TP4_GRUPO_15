@@ -54,6 +54,8 @@ public class Ventana extends JFrame {
 			//Evento boton 2
 			EventoBoton eventoC = new EventoBoton("Seleccion multiple", 2);		
 			button2.addActionListener(eventoC);
+
+			
 			
 			
 			
