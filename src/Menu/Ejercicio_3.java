@@ -50,7 +50,7 @@ public class Ejercicio_3 extends Ventana{
         
         JPanel panelNotas2 = new JPanel();
         panelNotas2.setBorder(new TitledBorder(new LineBorder(Color.BLACK)));     
-        panelNotas2.setBounds(38, 60, 400, 150);        
+        panelNotas2.setBounds(15, 78, 428, 132);        
         getContentPane().add(panelNotas2);
         panelNotas2.setLayout(null);
         
@@ -80,7 +80,7 @@ public class Ejercicio_3 extends Ventana{
         txtHoras.setColumns(10);
         
         JButton btnAceptar = new JButton("Aceptar");
-        btnAceptar.setBounds(302, 255, 115, 29);
+        btnAceptar.setBounds(328, 255, 115, 29);
         getContentPane().add(btnAceptar);
         
         btnAceptar.addActionListener(new ActionListener() {
