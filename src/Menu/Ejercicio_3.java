@@ -3,6 +3,8 @@ package Menu;
 import java.awt.Color;
 import java.awt.GridBagLayout;
 
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
@@ -12,6 +14,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.FlowLayout;
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 public class Ejercicio_3 extends Ventana{
 	
@@ -64,6 +67,19 @@ public class Ejercicio_3 extends Ventana{
         JCheckBox checkBoxDiseno = new JCheckBox("Dise\u00F1o Gr\u00E1fico");
         checkBoxDiseno.setBounds(210, 94, 139, 29);
         panelNotas2.add(checkBoxDiseno);
+        
+        JLabel lblCantHoras = new JLabel("Cantidad de horas en el computador:");
+        lblCantHoras.setBounds(15, 226, 275, 20);
+        getContentPane().add(lblCantHoras);
+        
+        JTextField txtHoras = new JTextField();
+        txtHoras.setBounds(292, 226, 146, 26);
+        getContentPane().add(txtHoras);
+        txtHoras.setColumns(10);
+        
+        JButton btnAceptar = new JButton("Aceptar");
+        btnAceptar.setBounds(302, 255, 115, 29);
+        getContentPane().add(btnAceptar);
         
 
         
