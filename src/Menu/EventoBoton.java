@@ -36,11 +36,7 @@ public class EventoBoton implements ActionListener{
 			Ejercicio_3 ventEj3 = new Ejercicio_3();
 		    ventEj3.setTitle(title);
 		}
-		if(numeroDeBoton == 3) 
-		{
-			Mensaje ventanaMensaje = new Mensaje(title);
-			ventanaMensaje.setTitle(title);
-		}
+		
 	    
 	   
 		

@@ -117,9 +117,11 @@ public class Ejercicio_3 extends Ventana{
                 String horas = txtHoras.getText();
                 
                 String mensaje = sistemaOperativo + " - " + especialidades + horas + " Hs";
-                new Mensaje(mensaje);  
+                String titulo = "Mensaje";  // Título de la ventana
+                new Mensaje(titulo, mensaje);  
             }
         });
+
         
         
 	}
