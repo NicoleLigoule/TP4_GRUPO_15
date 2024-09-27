@@ -5,6 +5,7 @@ import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -47,6 +48,11 @@ public class Ejercicio_3 extends Ventana{
         
         JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Linux");
         panelNotas1.add(rdbtnNewRadioButton_2);
+        
+        ButtonGroup group = new ButtonGroup();
+        group.add(rdbtnNewRadioButton);
+        group.add(rdbtnNewRadioButton_1);
+        group.add(rdbtnNewRadioButton_2);
         
         JPanel panelNotas2 = new JPanel();
         panelNotas2.setBorder(new TitledBorder(new LineBorder(Color.BLACK)));     
