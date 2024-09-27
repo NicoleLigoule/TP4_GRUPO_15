@@ -13,6 +13,8 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.FlowLayout;
@@ -90,12 +92,32 @@ public class Ejercicio_3 extends Ventana{
         getContentPane().add(btnAceptar);
         
         btnAceptar.addActionListener(new ActionListener() {
-           public void actionPerformed(ActionEvent e) {              
+            public void actionPerformed(ActionEvent e) {
 
-      			EventoBoton resultado = new EventoBoton("Mensaje", 3);		
-      			btnAceptar.addActionListener(resultado);
-                    
+                String sistemaOperativo = "";
+                if (rdbtnNewRadioButton.isSelected()) {
+                    sistemaOperativo = "Windows";
+                } else if (rdbtnNewRadioButton_1.isSelected()) {
+                    sistemaOperativo = "Mac";
+                } else if (rdbtnNewRadioButton_2.isSelected()) {
+                    sistemaOperativo = "Linux";
+                }
+
+                String especialidades = "";
+                if (chkBProgra.isSelected()) {
+                    especialidades += "Programación - ";
+                }
+                if (checkBAdm.isSelected()) {
+                    especialidades += "Administración - ";
+                }
+                if (checkBoxDiseno.isSelected()) {
+                    especialidades += "Diseño Gráfico - ";
+                }
+
+                String horas = txtHoras.getText();
                 
+                String mensaje = sistemaOperativo + " - " + especialidades + horas + " Hs";
+                new Mensaje(mensaje);  
             }
         });
         
