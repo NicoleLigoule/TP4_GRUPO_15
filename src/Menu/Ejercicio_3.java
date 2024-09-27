@@ -22,8 +22,10 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 public class Ejercicio_3 extends Ventana{
+	private static boolean VentanaAbierta = false;
+
 	
-	public Ejercicio_3() {
+	public Ejercicio_3(String nombre) {
         super(false);
         
         this.setSize(480, 340);
@@ -124,7 +126,19 @@ public class Ejercicio_3 extends Ventana{
             }
         });
 
-        
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent e) {
+                VentanaAbierta = false;
+            }
+        });
         
 	}
+    public static void mostrarVentana(String nombre) {
+        if (!VentanaAbierta) {
+            new Ejercicio_3(nombre).setVisible(true);
+            
+            VentanaAbierta = true;
+        }
+    }
 }

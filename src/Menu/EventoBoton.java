@@ -23,18 +23,15 @@ public class EventoBoton implements ActionListener{
 		if(numeroDeBoton == 0) //Con esto logramos que no traiga todos los botones juntos usando el mismo metodo
 		{
 			Ejercicio_1.mostrarVentana(title);
-			//Ejercicio_1 ventEj1 = new Ejercicio_1();
-		    //ventEj1.setTitle(title);
+
 		}
 		if(numeroDeBoton == 1) 
 		{
-			Ejercicio_2 ventEj2 = new Ejercicio_2();
-		    ventEj2.setTitle(title);
+			Ejercicio_2.mostrarVentana(title);
 		}
 		if(numeroDeBoton == 2) 
 		{
-			Ejercicio_3 ventEj3 = new Ejercicio_3();
-		    ventEj3.setTitle(title);
+			Ejercicio_3.mostrarVentana(title);
 		}
 		
 	    

@@ -18,9 +18,11 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
 public class Ejercicio_2 extends Ventana {
+	private static boolean VentanaAbierta = false;
+
     private JTextField txtNota1, txtNota2, txtNota3, txtPromedio, txtCondicion;
 
-    public Ejercicio_2() {
+    public Ejercicio_2(String nombre) {
         super(false);
 
         this.setSize(500, 500);
@@ -225,6 +227,13 @@ public class Ejercicio_2 extends Ventana {
             dispose();
         }
     });
+    
+    this.addWindowListener(new java.awt.event.WindowAdapter() {
+        @Override
+        public void windowClosed(java.awt.event.WindowEvent e) {
+            VentanaAbierta = false;
+        }
+    });
 }
 
 
@@ -272,4 +281,12 @@ public class Ejercicio_2 extends Ventana {
         return todosValidos;
     }
         
+    public static void mostrarVentana(String nombre) {
+        if (!VentanaAbierta) {
+            new Ejercicio_2(nombre).setVisible(true);
+            
+            VentanaAbierta = true;
+        }
+    }
+
 }
